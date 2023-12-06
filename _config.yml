@@ -1,14 +1,3 @@
-# Header
-navname: 24 páginas
-
-# navigator items
-nav:
-  - blog: 
-    name: nav.blog 
-    url: /archives
-  - about:
-    name: nav.about
-    url: /about
 
 # favicons
 icons: true
