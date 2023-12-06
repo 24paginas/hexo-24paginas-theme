@@ -46,18 +46,20 @@
   .links
     text-align center
 
-  p.links a.link svg
-      -webkit-transition all ease 0.4s
-      -moz-transition all ease 0.4s
-      -ms-transition all ease 0.4s
-      -o-transition all ease 0.4s
-      transition all ease 0.4s
+  p.links a.link svg    
+      // -webkit-transition all ease 0.4s
+      // -moz-transition all ease 0.4s
+      // -ms-transition all ease 0.4s
+      // -o-transition all ease 0.4s
+      // transition all ease 0.4s
       margin 0 10px
 
       &:hover
-        -webkit-transform translateY(-5px)
-        -moz-transform translateY(-5px)
-        -ms-transform translateY(-5px)
-        -o-transform translateY(-5px)
-        transform translateY(-5px)
+        animation: LinkAnimation .5s infinite ease-in-out alternate
+        @keyframes LinkAnimation { 100% { transform: translateY(-10px); } }
+        // -webkit-transform translateY(-5px)
+        // -moz-transform translateY(-5px)
+        // -ms-transform translateY(-5px)
+        // -o-transform translateY(-5px)
+        // transform translateY(-5px)
 
