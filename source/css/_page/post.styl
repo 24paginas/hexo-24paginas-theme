@@ -1,64 +1,87 @@
 .post
-  font-family: $basic-font-family
-  margin-bottom: 4em;  
+  font-family $basic-font-family
+  margin-bottom 4em  
   
-  .post-title
-    font-size: 1.2em;
-    line-height: 1.5em;
-    text-decoration: underline;
-    font-weight: bold;
-    position: relative;
-  .post-title:hover
-    text-decoration: none;
-  .post-title::before
-    content: "#";
-    color: $post-link-hover-color;
-    font-size: 5em;
-    display: block;
-    position: absolute;
-    left: -70px;
-    opacity: 0.3;
+  .post-header
+    margin-bottom 20px
+    
+    .post-title
+      font-size 1.5em
+      line-height 1.5em
+      text-decoration underline
+      font-weight bold
+      font-family Poppins
 
-  .post-subtitle
-    font-size: 1.1em;
-    line-height: 1.5em;
-    color: $font-secondary-color
-  .post-subtitle p
-    margin: 0
+      position relative
+      color $post-link-hover-color
+    .post-title::before
+      content ">"
+      color $post-link-color
+      font-size 2em
+      display block
+      position absolute
+      left -35px
+      -webkit-transition all ease 0.4s
+      -moz-transition all ease 0.4s
+      -ms-transition all ease 0.4s
+      -o-transition all ease 0.4s
+      transition all ease 0.4s
+    .post-title:hover
+      text-decoration none
+      color $post-link-color
+    .post-title:hover::before
+      animation: ChevronAnimation .5s infinite ease-in-out alternate
+      @keyframes ChevronAnimation { 100% { transform: translateX(-25px); } }
+    
+    .post-subtitle
+      font-size 1.1em
+      line-height 1.5em
+      color $font-secondary-color
+    .post-subtitle p
+      margin 0
 
   .post-footer    
-    // margin-top: 30px
+    // margin-top 30px
 
   .post-meta, .post-footer
     font-size 1em
+    font-family Montserrat  
     color $font-secondary-color
-    margin-bottom: 5px;
+    margin-bottom 5px
 
     a
       color $font-secondary-color
-      text-decoration: underline;
+      text-decoration underline
 
       &:hover
         color $global-link-hover-color
-        text-decoration: none;
+        text-decoration none
+
+.post-wrap
+  position relative
+  width 100%
+  max-width 780px
+  margin 0 auto
+  padding-top 15px
         
 .post-content
   // padding-top 2rem
-  font-size 1.1em
-  line-height: 1.5em;
+  font-size 17px
+  font-family Montserrat
+  line-height 1.5em
   // text-align justify
-  margin-bottom: 1em;
+  margin-bottom 1em
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap break-word
+  word-wrap break-word
 
-  -ms-word-break: break-all;
-  word-break: break-word;
+  -ms-word-break break-all
+  word-break break-word
 
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  -ms-hyphens auto
+  -moz-hyphens auto
+  -webkit-hyphens auto
+  hyphens auto
 
   h2,
   h3,
@@ -66,7 +89,8 @@
   h5,
   h6
     font-size 1.1em
-    margin-top 1.2em
+    // margin-top 1.2em
+    margin-top 0
     margin-bottom 1em
     // padding-top .8em
     // padding-bottom .3em
@@ -121,40 +145,40 @@
     display block
     max-width 100%
     height auto
-    margin: 20px auto;
-    border-radius: 9px;
+    margin 20px auto
+    border-radius 9px
     overflow hidden
     // for zoom
-    transition: transform .5s ease;
+    transition transform .5s ease
 
   // zoom
   img:hover 
-    transform: scale(1.05);
+    transform scale(1.05)
 
   blockquote
-    // background: url('/images/quotes.gif') no-repeat top left;
-    // border: none;
+    // background url('/images/quotes.gif') no-repeat top left
+    // border none
     padding 1em 1.2em 1em 1.2em
-    // font-style: italic;
-    position: relative;
-    font-family: monospace;
-    // font-size: small;
-    line-height: 140%;
-    font-weight: normal;
-    text-align: left;    
+    // font-style italic
+    position relative
+    font-family monospace
+    // font-size small
+    line-height 140%
+    font-weight normal
+    text-align left    
     
   blockquote:after
-    content: '\201D';
-    font-size: 9em;
-    font-family: $basic-font-family
-    color: $global-link-hover-color;
-    font-weight: bold;
-    opacity: 0.3;
-    z-index: -1;
-    position: absolute;
-    left: -30px;
-    top: 65px;
-    transform: rotate(-17deg);
+    content '\201D'
+    font-size 9em
+    font-family $basic-font-family
+    color $global-link-hover-color
+    font-weight bold
+    opacity 0.3
+    z-index -1
+    position absolute
+    left -30px
+    top 65px
+    transform rotate(-17deg)
 
     // font-size 1rem
     // display block
@@ -261,8 +285,8 @@
     text-align center
 
 .post-nav 
-  font-family: $basic-font-family
-  font-size: 1em;
+  font-family $basic-font-family
+  font-size 1em
   color $font-secondary-color
 
   a
@@ -272,53 +296,53 @@
 
   &:before,
   &:after 
-    content: " "
-    display: table
+    content " "
+    display table
   
   & a.prev,
   & a.next 
-    transition-property: transform
-    transition-timing-function: ease-out
-    transition-duration: 0.3s
+    transition-property transform
+    transition-timing-function ease-out
+    transition-duration 0.3s
   
   & a.prev 
-    float: left
+    float left
   
   & a.prev::before 
     content "<"
     margin-right .5em
 
   & a.prev:hover 
-    transform: translateX(-4px)
+    transform translateX(-4px)
   
   & a.next 
-    float: right
+    float right
   
   & a.next::after 
     content ">"
     margin-left .5em
   
   & a.next:hover 
-    transform: translateX(4px)
+    transform translateX(4px)
 
 .miniblog-post
-  border: solid 1px $font-secondary-color;
-  border-radius: 5px;
-  padding: 0 20px;
+  border solid 1px $font-secondary-color
+  border-radius 5px
+  padding 0 20px
 
   .miniblog-link
-    font-size: 1.2em;
-    line-height: 1.5em;
-    text-decoration: underline;
-    font-weight: bold;
-    position: relative;
+    font-size 1.2em
+    line-height 1.5em
+    text-decoration underline
+    font-weight bold
+    position relative
 
   .miniblog-link::before
-    content: "#";
-    color: $post-link-hover-color;
-    font-size: 5em;
-    display: block;
-    position: absolute;
-    left: -90px;
-    top: 31px;
-    opacity: 0.3;
+    content "#"
+    color $post-link-hover-color
+    font-size 5em
+    display block
+    position absolute
+    left -90px
+    top 31px
+    opacity 0.3

@@ -52,8 +52,8 @@ page:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: DD-MM-YYYY
-time_format: HH:mm
+date_format: dddd D [de] MMMM [de] YYYY
+time_format: HH:mm:ss
 
 # stylesheets loaded in the <head>
 stylesheets:

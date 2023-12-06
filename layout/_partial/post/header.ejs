@@ -1,4 +1,13 @@
-<a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-<% if (post.subtitle) { %>
-<div class="post-subtitle"><%- markdown(post.subtitle) %></div>
-<% } %>
+<div class="post-header">
+  <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+  <% if (post.subtitle) { %>
+  <div class="post-subtitle"><%- markdown(post.subtitle) %></div>
+  <% } %>
+  <div class="post-meta">
+    Publicado por <a href="https://neverbot.com"><%= post.author ? post.author : 'alguien' %></a>, el
+    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, theme.date_format) %></time>
+    <% if (theme.show_updated && post.date !== post.updated) { %>
+    (modificado: <time datetime="<%= date_xml(post.updated) %>" itemprop="dateModified"><%= date(post.updated, theme.date_format) %></time>)
+    <% } %>
+  </div>
+</div>
