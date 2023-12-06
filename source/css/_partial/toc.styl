@@ -1,6 +1,6 @@
 //// ========== TOC ========== //
 
-$post-toc-width= 12rem
+$post-toc-width=12rem
 
 $padding-1= 1px
 $padding-4= 0.25rem
@@ -25,15 +25,13 @@ $font-size-22= 1.375rem
 $font-size-24= 1.5rem
 $font-size-32= 2rem
 
-// book-toc
-
 .post-toc
   position fixed
-  top 32px+63px // top value = (navbar>continer).height + (.post-wrap).padding-top
+  top 250px
   right 2em
   width $post-toc-width
+  font-family: $basic-font-family
   font-size $font-size-9
-
 
   .tocbot-list 
     max-height 450px
@@ -41,13 +39,6 @@ $font-size-32= 2rem
     overflow auto
     position relative
     padding-right $padding-14
-    &::-webkit-scrollbar
-      width 6px
-      height 6px
-    &::-webkit-scrollbar-thumb
-      width 6px
-      background-color #eee
-      border-radius 2px
 
     ul 
       list-style none
@@ -56,6 +47,7 @@ $font-size-32= 2rem
 
       li 
         margin-left $padding-4
+        margin-top 5px
 
   .toc-link::before 
     background-color white
@@ -71,6 +63,3 @@ $font-size-32= 2rem
       cursor pointer
     a:hover 
       color gray
-    
-  
-
