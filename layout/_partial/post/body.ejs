@@ -1,3 +1,9 @@
 <div class="post-content">
+  <% if (post.template == "instagram") { %>
+    <% for (var i = 0; i < post.images.length; i++) { %>
+    <img src="<%= "/" + post.path + post.images[i] %>" />
+    <% } %>
+  <% } %>
+
   <%- post.content %>
 </div>
