@@ -1,0 +1,35 @@
+
+<% if (post.images.length == 1) { %>
+
+<img src="<%= "/" + post.path + post.images[0] %>">
+
+<% } else { %>
+
+<div class="post-gallery">
+
+  <div class="slider-wrap">
+    <ul class="slider">
+      <% for (var i = 0; i < post.images.length; i++) { %>
+        <li>
+          <div>
+            <img src="<%= "/" + post.path + post.images[i] %>">
+          </div>
+        </li>
+      <% } %>
+    </ul>
+        
+    <!--controls-->
+    <div class="btns next"><i class="fa fa-arrow-right"></i></div>
+    <div class="btns previous"><i class="fa fa-arrow-left"></i></div>
+    <div class="counter"></div>
+    
+    <div class="pagination-wrap">
+      <ul>
+      </ul>
+    </div>
+    <!--controls-->
+  </div>
+
+</div>
+
+<% } %>
