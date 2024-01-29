@@ -1,7 +1,13 @@
 
-<% if (post.images.length == 1) { %>
+<% if (post.media.length == 1) { %>
 
-<img src="<%= "/" + post.path + post.images[0] %>">
+<% if (post.media[0].indexOf(".mp4") > -1) { %>
+<video controls>
+  <source src="<%= "/" + post.path + post.media[0] %>" type="video/mp4">
+</video>
+<% } else { %>
+<img src="<%= "/" + post.path + post.media[0] %>">
+<% } %>
 
 <% } else { %>
 
@@ -9,10 +15,16 @@
 
   <div class="slider-wrap">
     <ul class="slider">
-      <% for (var i = 0; i < post.images.length; i++) { %>
+      <% for (var i = 0; i < post.media.length; i++) { %>
         <li>
           <div>
-            <img src="<%= "/" + post.path + post.images[i] %>">
+            <% if (post.media[i].indexOf(".mp4") > -1) { %>
+            <video controls>
+              <source src="<%= "/" + post.path + post.media[i] %>" type="video/mp4">
+            </video>
+            <% } else { %>
+            <img src="<%= "/" + post.path + post.media[i] %>">
+            <% } %>
           </div>
         </li>
       <% } %>
