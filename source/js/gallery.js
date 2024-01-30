@@ -5,7 +5,7 @@
 // // get the slide width
 // const sliderWidth = $('#slider-wrap').width();
 
-$(document).ready(function () {
+function galleries() {
   $('.slider-wrap').each(function (index, value) {
     const $this = $(value);
     const width = $this.width();
@@ -109,7 +109,7 @@ $(document).ready(function () {
     countSlides(elem);
     pagination(elem);
   }
-}); // DOCUMENT READY
+}
 
 /************************
  //*> OPTIONAL SETTINGS
@@ -122,3 +122,17 @@ function pagination(elem) {
   elem.find('.pagination-wrap ul li').removeClass('active');
   elem.find('.pagination-wrap ul li:eq(' + elem.data('pos') + ')').addClass('active');
 }
+
+// hack to wait until the DOM is really loaded
+
+// Helper function
+// const domReady = (cb) => {
+//   document.readyState === 'interactive' || document.readyState === 'complete'
+//     ? cb()
+//     : document.addEventListener('DOMContentLoaded', cb);
+// };
+
+$(window).on('load', function () {
+  // domReady(galleries);
+  galleries();
+});
