@@ -120,11 +120,18 @@
       .dark-theme & 
         background: $dark-background-color !important
    
+  .archive-container
+    flex-direction column
+    
   .archive
-    width 90%
+    width 100%
+    padding-right 0
     & .archive-item
       .archive-item-date
         display none
+    
+    .post-list
+      padding 0
 
   #dynamic-to-top 
     display: none !important
@@ -150,6 +157,24 @@
         .categories
           overflow: hidden
 
+  .intro
+    margin-bottom 0
+
+    .post-content
+      padding 10px 0
+    
+    .post-content 
+      img
+        float initial
+        margin 0 auto 20px auto
+      h1
+        font-size 24px
+      p
+        font-size 21px
+  
+  .post
+    margin-bottom 25px
+        
 /* iPads (portrait and landscape) ----------- */
 @media screen and (max-width: 1023px)
   .navbar-mobile
@@ -161,6 +186,6 @@
     display none
 
 /* post toc Style */
-@media screen and (max-width: 1279px) // 最大宽度1279px时应用这条规则。（最大宽度小于1279px返回false，屏蔽规则。）
+@media screen and (max-width: 1279px)
   .post-toc
     display none
