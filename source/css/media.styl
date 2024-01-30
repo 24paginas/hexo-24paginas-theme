@@ -170,8 +170,14 @@
       h1
         font-size 24px
       p
-        font-size 21px
-  
+        font-size 21px  
+      .chevron-down
+        visibility visible
+        display block
+        text-align center
+        animation: jumpInfinite 1.5s infinite;
+        @keyframes jumpInfinite { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+        
   .post
     margin-bottom 25px
         
@@ -189,3 +195,4 @@
 @media screen and (max-width: 1279px)
   .post-toc
     display none
+
