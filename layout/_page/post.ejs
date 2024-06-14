@@ -6,24 +6,8 @@
 <div class="intro">&nbsp;</div>
 <%- partial('_partial/post') %>
 
-<div class="comments">
-  <script src="https://giscus.app/client.js"
-          data-repo="24paginas/24paginas.com"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkxODI0NDE5ODA="
-          data-category="Posts"
-          data-category-id="DIC_kwDOCt_X_M4CeOZW"
-          data-mapping="title"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="preferred_color_scheme"
-          data-lang="es"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
-</div>
+<%- partial('_partial/post/comments') %>
+
 <section class="post-nav">
     <% if (post.prev) { %>
         <a class="prev" rel="prev" href="<%- url_for(post.prev.path)%>">(<em>más nuevo</em>) <%- post.prev.title %></a>
