@@ -4,7 +4,7 @@ hexo.extend.tag.register(
   function (args) {
 
     if (args.length == 0)
-      return 'wat';
+      return '';
 
     // we have only one file, do not create a gallery, just show it
     if (args.length == 1) {
