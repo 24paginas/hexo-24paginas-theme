@@ -37,11 +37,6 @@ body
     height 100%
     z-index -1
 
-  &.dark-theme
-    background-color $dark-background-color
-    color $dark-font-color
-    transition color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease
-
 a
   color $global-link-color
   text-decoration none
@@ -53,11 +48,13 @@ a
     text-decoration none
     transition color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease
     
-  .dark-theme &
-    color $dark-global-link-color
-    text-decoration none
-    transition color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease
-    &:hover
-      color $dark-global-link-hover-color
-      text-decoration none
-      transition color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease
+h1, h2, h3, h4, h5, h6
+  color $post-link-hover-color
+  font-size: 2.0em;
+  line-height: 1.5em;
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: Poppins;
+  position: relative;
+  color: #ff7430;
+
