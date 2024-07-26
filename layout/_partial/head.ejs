@@ -10,7 +10,7 @@
 var title = page.title;
 
 if (is_archive()){
-    title = __('archive_a');
+    title = 'Archivo';
 
     if (is_month()){
         title += ': ' + page.year + '/' + page.month;
@@ -18,9 +18,9 @@ if (is_archive()){
         title += ': ' + page.year;
     }
 } else if (is_category()){
-    title = __('category') + ': ' + page.category;
+    title = 'Categoría: ' + page.category;
 } else if (is_tag()){
-    title = __('tag') + ': ' + page.tag;
+    title = 'Etiqueta: ' + page.tag;
 }
 %>
 <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
