@@ -9,4 +9,8 @@
     | <span class="permalink" title="Permalink"><a href="<%- url_for(post.path) %>">&para;</a></span>
     <% } %>
   </div>
+
+  <% if (is_post()) { %>
+  <%- partial('_partial/post/related', { post: post }) %>
+  <% } %>
 </section>

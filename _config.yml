@@ -68,3 +68,27 @@ scripts:
 
 # plugin functions
 # ...
+
+related_posts:
+  enabled: true
+  # only calculate related_posts when env is production
+  # npx hexo generate --pro
+  # npx hexo server --pro
+  enable_env_name: pro
+  filter_threshold: 0.3
+  related_count: 5
+  weight:
+      title: 0.05
+      description: 0.05
+      keywords: 0.01
+      tags: 0.5
+      categories: 0.1
+      text: 0.1
+  # stemmers:
+  #   - en
+  #   - ru
+  # reserved:
+  #   - asp.net
+  #   - vs.net
+  #   - ado.net
+  #   - .net
