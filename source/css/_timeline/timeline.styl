@@ -35,7 +35,7 @@
   position: absolute
   left: 0
   font-size: .875rem
-  font-weight: normal
+  font-weight: 600
   padding-top: .25rem
   padding-bottom: .25rem
   padding-left: .75rem
@@ -43,7 +43,7 @@
   color: #2d1b2e
   background-color: #e1e1e1
   border-radius: 9999px
-  width: 3.3rem
+  width: 4.9rem
   white-space: nowrap
   overflow: hidden
   display: block
@@ -83,18 +83,16 @@
   margin-top: 9px
 
 .timeline-title 
-  color: $post-link-hover-color
-  font-size: 1.1rem
+  color: #161209
+  font-size: 1.5rem
   line-height: 1.375
-  font-weight: bold
-  top: 4px;
-  position: relative;  
+  font-weight: normal
   
   p
     margin: 0
 
 .timeline-subtitle 
-  font-size: 1.0rem;
+  font-size: 1.25rem
   color: #a9a9b3
   margin-bottom: 10px
   
@@ -104,6 +102,34 @@
 .timeline .last .timeline-line
   display: none
 
-.timeline-content p:first-of-type:has(> img.left)
-.timeline-content p:first-of-type:has(> img.right)
-  margin-bottom: 0
+.timeline.noleft
+  .timeline-circle
+    margin-left 0
+  .timeline-line
+    margin-left 0.45rem
+  .timeline-node
+    flex 1
+    position relative
+    padding-left 1.7rem
+  .timeline-time
+    display none
+
+
+@media screen and (max-width: 479px) 
+  .timeline
+    margin-top 40px
+  .timeline-circle
+    margin-left 0
+  .timeline-line
+    margin-left 0.45rem
+  .timeline-node
+    flex 1
+    position relative
+    padding-left 1.7rem
+  .timeline-time
+    display block !important
+    left unset
+    width unset
+    position absolute
+    top -33px
+    left 22px
