@@ -1,33 +1,52 @@
 
-$background-color = #fff
+:root
+  --background-color #fff
+  --font-color #424242
+  --font-secondary-color #767676
+  --navbar-active-color #424242
+  --global-link-color #424242
+  --global-link-hover-color #ea9700
+  --emphasis-color #ff7c00
+  --post-link-color #ffa500
+  --post-link-hover-color #ff7430
+  --pagination-link-color #ea9700
+  --pagination-link-active-color #000
+  --border-color #e8e8e8
+  --code-font-color #c7254e
+  --code-background-color #f8f5ec
+  --post-blockquote-border-color var(--global-link-hover-color)
+  --post-blockquote-background-color #fff5e3
+  --post-table-background-color #ffe2ac
 
-$font-color = #424242
-$font-secondary-color = #767676
+$background-color = var(--background-color)
 
-$navbar-active-color = #424242
+$font-color = var(--font-color)
+$font-secondary-color = var(--font-secondary-color)
 
-$global-link-color = #424242
-$global-link-hover-color = #ea9700
+$navbar-active-color = var(--navbar-active-color)
 
-$emphasis-color = #ff7c00
+$global-link-color = var(--global-link-color)
+$global-link-hover-color = var(--global-link-hover-color)
+
+$emphasis-color = var(--emphasis-color)
 
 // logo e53056
 
-$post-link-color = #ffa500
-$post-link-hover-color = #ff7430
+$post-link-color = var(--post-link-color)
+$post-link-hover-color = var(--post-link-hover-color)
 
 // ff7430
-$pagination-link-color = #ea9700
-$pagination-link-active-color = #000
+$pagination-link-color = var(--pagination-link-color)
+$pagination-link-active-color = var(--pagination-link-active-color)
 
-$border-color = #e8e8e8
+$border-color = var(--border-color)
 
-$code-font-color = #c7254e
-$code-background-color = #f8f5ec
+$code-font-color = var(--code-font-color)
+$code-background-color = var(--code-background-color)
 
-$post-blockquote-border-color = $global-link-hover-color
-$post-blockquote-background-color = lighten($global-link-hover-color,90%)
+$post-blockquote-border-color = var(--post-blockquote-border-color)
+$post-blockquote-background-color = var(--post-blockquote-background-color)
 
-$post-table-background-color = lighten($global-link-hover-color,70%)
+$post-table-background-color = var(--post-table-background-color)
 
 $basic-font-family = Poppins
