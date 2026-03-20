@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Navegación principal">
   <div class="navbar-container">
     <div class="header-logo">
       <a href="/" rel="home">
@@ -13,13 +13,13 @@
 </nav>
 
 <%# mobile %>
-<nav class="navbar-mobile" id="nav-mobile">
+<nav class="navbar-mobile" id="nav-mobile" aria-label="Navegación móvil">
   <div class="navbar-container">
     <div class="header-logo">
       <a href="/" rel="home">
         <img src="<%- url_for(theme.avatar, { ignore: true }) %>" alt="<%= config.title %>"></a>
     </div>
-    <div class="menu-toggle" onclick="mobileBtn()">&#9776; menú</div>
+    <div class="menu-toggle" role="button" aria-expanded="false" onclick="mobileBtn()">&#9776; menú</div>
     <div class="menu" id="mobile-menu">
       <a class="menu-item" href="/archivo">Archivo</a>
       <a class="menu-item" href="/acerca-de">Acerca de...</a>
@@ -34,9 +34,11 @@
     if(toggleMenu.classList.contains("active")){
        toggleMenu.classList.remove("active")
       mobileMenu.classList.remove("active")
+      toggleMenu.setAttribute("aria-expanded", "false")
     }else{
       toggleMenu.classList.add("active")
       mobileMenu.classList.add("active")
+      toggleMenu.setAttribute("aria-expanded", "true")
     }
   }
 </script>
