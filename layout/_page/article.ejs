@@ -12,26 +12,29 @@
           </section>
       </article>
 
-      <div class="archive-container">
-        <div class="archive">
-          <ul class="post-list">
-            <% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %>
-            <% var show_posts = site.tags.findOne({name: page.tag})
-                                    .posts.sort(field_sort, 'desc')
-                                    .limit(theme.archive.post_per_page || 5) %>
-            
-            <% show_posts.each(function(post) { %>
-              <% const tags = post.tags.toArray().map((item) => { return item.name; }); %>
-              <% if (post.tags && tags.includes('miniblog')) { %>
-                <%- partial('_partial/miniblog-post', { post: post }) %>
-              <% } else { %>
-                <%- partial('_partial/post', { post: post }) %>
-              <% } %>
-            <% }); %>
-          </ul>
+      <% var page_tag = page.tag ? site.tags.findOne({name: page.tag}) : null %>
+
+      <% if (page_tag) { %>
+        <div class="archive-container">
+          <div class="archive">
+            <ul class="post-list">
+              <% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %>
+              <% var show_posts = page_tag.posts.sort(field_sort, 'desc')
+                                      .limit(theme.archive.post_per_page || 5) %>
+
+              <% show_posts.each(function(post) { %>
+                <% const tags = post.tags.toArray().map((item) => { return item.name; }); %>
+                <% if (post.tags && tags.includes('miniblog')) { %>
+                  <%- partial('_partial/miniblog-post', { post: post }) %>
+                <% } else { %>
+                  <%- partial('_partial/post', { post: post }) %>
+                <% } %>
+              <% }); %>
+            </ul>
+          </div>
+          <%- partial('_partial/sidebar') %>
         </div>
-        <%- partial('_partial/sidebar') %>
-      </div>
+      <% } %>
     </div>
 
 </div>
