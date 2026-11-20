@@ -104,10 +104,17 @@ function localFile(src, data, hexo) {
   return candidates.find((file) => fs.existsSync(file)) || null;
 }
 
+// hexo-gallery-slider keeps a slider at zero height and hidden until every
+// slide has loaded, so lazy slides would leave it collapsed until the reader
+// scrolls next to it. Slides are the images inside its <ul class="slider">.
+function inSlider(html, offset) {
+  return html.lastIndexOf('<ul class="slider">', offset) > html.lastIndexOf('</ul>', offset);
+}
+
 function addAttributes(html, data, hexo) {
   let first = true;
 
-  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+  return html.replace(/<img\b[^>]*>/gi, (tag, offset) => {
     let result = tag;
     const isFirst = first;
     first = false;
@@ -121,7 +128,7 @@ function addAttributes(html, data, hexo) {
       }
     }
 
-    if (!isFirst && !/\sloading=/i.test(tag)) {
+    if (!isFirst && !/\sloading=/i.test(tag) && !inSlider(html, offset)) {
       result = result.replace(/^<img\b/i, '<img loading="lazy"');
     }
 
