@@ -17,7 +17,7 @@
       <% if (page_tag) { %>
         <div class="archive-container">
           <div class="archive">
-            <ul class="post-list">
+            <div class="post-list">
               <% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %>
               <% var show_posts = page_tag.posts.sort(field_sort, 'desc')
                                       .limit(theme.archive.post_per_page || 5) %>
@@ -30,7 +30,7 @@
                   <%- partial('_partial/post', { post: post }) %>
                 <% } %>
               <% }); %>
-            </ul>
+            </div>
           </div>
           <%- partial('_partial/sidebar') %>
         </div>
