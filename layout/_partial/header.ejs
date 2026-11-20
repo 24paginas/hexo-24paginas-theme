@@ -19,7 +19,7 @@
       <a href="/" rel="home">
         <img src="<%- url_for(theme.avatar, { ignore: true }) %>" alt="<%= config.title %>" width="300" height="300"></a>
     </div>
-    <div class="menu-toggle" role="button" aria-expanded="false" onclick="mobileBtn()">&#9776; menú</div>
+    <button type="button" class="menu-toggle" aria-label="menú" aria-controls="mobile-menu" aria-expanded="false" onclick="mobileBtn()">&#9776; menú</button>
     <div class="menu" id="mobile-menu">
       <a class="menu-item" href="/archivo">Archivo</a>
       <a class="menu-item" href="/acerca-de">Acerca de...</a>
